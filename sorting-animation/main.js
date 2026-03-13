@@ -1,5 +1,5 @@
 var a = [1, 2, -1, 0];
-
+// khanh tam
 function sort(ar){
     for(var i = 0; i < ar.length; i++){
         for(var j = i + 1; j < ar.length; j++){
@@ -33,7 +33,9 @@ function cont(){
         case 1:
             selSort(a);
             break;
-        
+        case 2:
+            insort();
+            break;
     }    
 }
 function stopauto(){
@@ -308,3 +310,70 @@ function markEl(ind){
 
 
 displayArray(a);
+
+function insertionSort(ar){
+    for(var i = 1; i < ar.length; i++){
+        var k = ar[i];
+        j = i - 1;
+        while(j >= 0 && k < ar[j]){
+            ar[j + 1] = ar[j];
+            j--;
+        }
+        ar[j + 1] = k;
+    }
+
+    return ar;
+}
+
+function insort(){
+    if(!sel){
+        i = 1;
+        j = 0;
+        sel = !sel;
+        key = a[i];
+    }
+    if(i >= a.length){
+        console.log('done');
+        sortDone();
+        assignDone(tj);
+        return;
+    }
+    alt(`continue loop`);
+    focusEl(i, 0, 1);
+    if(j >=0) focusEl(j, 1, 1);
+    displayVar(['i','j','key'],[i, j, key],[]);
+    if(!isloop){
+        if(j >= 0 && key < a[j]){
+            console.log(i, j)
+            tj = j + 1;
+            a[j + 1] = a[j];
+            assignEl(j + 1, a[j]);
+            alt(`<i>Assign a[j+1] = key</i>`, 0, 1);
+            j--;
+        } else {
+                alt(`j:${j} >= 0 && key:${key} < a[j] = false, While loop end <i>Assign a[j+1] = key</i>`, 0, 1);
+                a[j + 1] = key;
+                tj = j + 1;
+                assignEl(j + 1, key);
+                i++;
+                key = a[i];
+                j = i - 1;
+        }
+        isloop = !isloop;
+    } else {
+        assignDone(tj)
+        console.log(1);
+        isloop = !isloop;
+    }
+}
+
+function assignEl(i, val){
+    var v1 = arrayEl.children[i].innerText;
+    arrayEl.children[i].innerHTML = `<i>${v1}</i>→${val}`;
+}
+function assignDone(i){
+     var v1 = arrayEl.children[i].innerText;
+    if(v1.split('→')[1] == undefined) return; 
+    arrayEl.children[i].innerText = v1.split('→')[1];
+}
+//insort();
