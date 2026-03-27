@@ -17,7 +17,8 @@ methodbtn.oninput = () => {
 }
 
 let autoEv;
-var autoBtn = document.getElementById('auto');
+var autoBtn = document.getElementById('auto'),
+    stopBtn = document.getElementById('stop');
 // automatically click > button
 function autoclick(itv){
     autoEv = setInterval(() => {
@@ -29,18 +30,22 @@ function cont(){
     switch(parseInt(methodbtn.value)){
         case 0:
             bubbleSort(a);
+            startSort();
             break;
         case 1:
             selSort(a);
+            startSort();
             break;
         case 2:
             insort();
+            startSort();
             break;
     }    
 }
 function stopauto(){
     clearInterval(autoEv);
     autoBtn.style.display = 'inline';
+    stopBtn.style.display = 'none';
 
 }
 
@@ -377,3 +382,14 @@ function assignDone(i){
     arrayEl.children[i].innerText = v1.split('→')[1];
 }
 //insort();
+
+
+var ctrl = document.getElementsByClassName('control')[0].children;
+function startSort(){
+    ctrl[0].children[0].disabled = true;
+    ctrl[1].disabled = true;
+}
+function startauto(){
+    autoclick(200);
+    stopBtn.style.display = 'block';
+}
