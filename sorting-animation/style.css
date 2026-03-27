@@ -3,49 +3,11 @@
     margin:0;
 }
 
-.array{
-    display:flex;
-}
-.array div{
-    border:1px solid gray;
-    width:42px;
-    height:42px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-.array div i{
-    font-size:12px;
-    color:gray;
-}
-.array div.blue{
-    background:rgb(142, 210, 255);
-}
-.array div.green{
-    background:rgb(115, 255, 208);
-}
-.array-ind div.blue{
-    background:blue;
-}
-.array-ind div.green{
-    background:green;
-}
-.array-ind{
-    display:flex;
-}
-.array-ind div{
-    width:42px;
-    display:flex;
-    justify-content:center;
-    border:1px solid #ddd;
-}
 
-.swap{
-    color:red;
-}
-.end{
-    color:green;
-}
+
+
+
+
 #alt i{
     font-weight:bold;
     color:green;
@@ -82,4 +44,116 @@
     height:16%;
     width:100%;
     background:red !important;
+}
+
+
+
+button{
+    padding:3px;
+    min-width:50px;
+    background:#f1f1f1;
+    border:1px solid rgb(160, 160, 160);
+    border-radius:10px;
+}
+button:hover{
+    background:#ddd;
+}
+.control{
+    display:flex;
+    gap:5px;
+    padding:5px 10px;
+    border-bottom:1px solid #ddd;
+      flex-wrap:wrap;
+}
+.control select{
+    padding:3px 5px;
+    background:green;
+    border:2px solid green;
+    color:white;
+    font-weight:bold;
+  
+}
+.vars{
+    padding:5px 10px;
+    min-height:70px;
+    border-bottom:1px solid #ddd;
+}
+.inf{
+    padding:5px 10px;
+    min-height:110;
+    height:110px;
+    border-bottom:1px solid #ddd;
+}
+.inf #alt{
+    background:#e6e6e6;
+    border:1px solid #b4b4b4;
+    padding:5px;
+    width:fit-content;
+    border-radius:10px;
+}
+#alt strong{
+    color:gray;
+    font-size:15px;
+    font-weight:normal;
+}
+.swap{
+    color:red;
+}
+.end{
+    color:green;
+}
+.array-container{
+    padding:10px;
+    overflow:auto;
+}
+.array div.blue{
+    background:rgb(143, 210, 255);
+}
+.array div.green{
+    background:rgb(176, 255, 229);
+}
+.array-ind div.blue{
+    background:rgb(0, 87, 145);
+    color:rgba(255,255,255,.5);
+
+}
+.array-ind div.green{
+    background:rgb(0, 177, 118);
+    color:rgba(255,255,255,.5);
+
+}
+.array-ind{
+    display:flex;
+}
+.array-ind div, .array div{
+    border:1px solid rgba(155,155,155,.4);
+}
+.array-ind div{
+    min-width:50px;
+    display:flex;
+    justify-content:center;
+    margin:1px;
+    background:#f1f1f1;
+}
+.array{
+    display:flex;
+    width:100%;
+}
+h2{
+    font-size:20px;
+    margin:5px 0;
+    color:rgb(0, 87, 145);
+}
+.array div{
+
+    min-width:50px;
+    height:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:1px;
+}
+.array div i{
+    font-size:12px;
+    color:gray;
 }
