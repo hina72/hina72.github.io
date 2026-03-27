@@ -13,23 +13,28 @@
             <label>
                 <select id = 'methods'>
                     <option value = '0'>bubble sort</option>
-                    <option selected value = '1'>selection sort</option>
+                    <option value = '1'>selection sort</option>
+                    <option selected value = '2'>insertion sort</option>
                 </select>
             </label>
-            <button onclick = 'rnd()'>Random array</button>
+            <button onclick = 'rnd()'><b>Generate Random array</b></button>
+            <button onclick = 'cont()'>Next Step</button>
+            <button id = 'auto' onclick = 'startauto()'>Auto</button>
+            <button id = 'stop' style = 'display:none' onclick = 'stopauto()'>Stop</button>
         </div>
         <div class = 'nav'>
-            <button onclick = 'cont()'>&gt;</button>
-            <button id = 'auto' onclick = 'autoclick(200)'>Auto</button>
-            <button id = 'stop' onclick = 'stopauto()'>Stop</button>
+            
         </div>
         <div class = 'vars'>
+            <h2>Variables</h2>
             <div class = 'var-list'></div>
         </div>
         <div class = 'inf'>
-            <div id = 'alt'></div>
+            <h2>Notes</h2>
+            <div id = 'alt'><strong>Click Next Step/Auto to start!</strong></div>
         </div>
         <div class = 'array-container'>
+            <h2>Array</h2>
             <div class = 'array-ind'></div>
             <div class = 'array'></div>
         </div>
